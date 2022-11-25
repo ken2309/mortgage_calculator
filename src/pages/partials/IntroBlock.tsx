@@ -1,39 +1,25 @@
 import React, { Key } from "react"
 import checkWhite from '../../images/check-white.svg';
-interface blockItem {
-    name?: string;
-    description?: string;
-}
-const list = [
-    {
-        name: 'Advisor',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
-    },
-    {
-        name: 'Agency',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
-    },
-    {
-        name: 'Management',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
-    }
-]
-const ItroBlockItem = ({ name, description }: blockItem) => {
+import useIntroBlock from '../../hooks/use-intro-block';
+import { IIntroBlock } from "../../interface/IIntroBlock";
+
+const ItroBlockItem = ({ title, description, icon }: IIntroBlock) => {
     return (
         <div className="IntroBlock-item">
             <div className="item__image">
-                <img src={checkWhite} alt="" />
+                <img src={icon.url} alt={icon.title} />
             </div>
             <div className="item__name">
-                {name}
+                {title}
             </div>
             <div className="item__description">
-                {description}
+                {description.description}
             </div>
         </div>
     )
 }
 export default function index() {
+    const listBlock = useIntroBlock() as IIntroBlock[];
     return (
         <section className="ItroBlock" id="service">
             <div className="title">
@@ -43,8 +29,8 @@ export default function index() {
             </div>
             <div className="IntroBlock-list">
                 {
-                    list.map((item: blockItem, index: any): any =>
-                        <ItroBlockItem name={item.name} description={item.description} key={index} />
+                    listBlock.map((item: IIntroBlock, index: any): any =>
+                        <ItroBlockItem title={item.title} description={item.description} key={index} icon={item.icon}  />
                     )
                 }
             </div>

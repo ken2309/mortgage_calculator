@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
-import BrandLabel from "./BrandLabel";
+import BrandLabel from "../../components/BrandLabel";
 import Fb from "../../images/icon-fb.svg"
 import Twitter from "../../images/icon-twitter.svg"
 import Insta from "../../images/icon-insta.svg"

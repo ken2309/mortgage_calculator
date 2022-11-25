@@ -10,7 +10,6 @@ export default function index() {
     const debounceRepaymentTime = useCallback(debounce((nextValue) => { setRepaymentTime(nextValue) }, 500), [])
     const debounceInterestRate = useCallback(debounce((nextValue) => { setInterestRate(nextValue) }, 500), [])
     const handlePurchase = (e: any, kind: string) => {
-        // console.log(e.value);
         const { value } = e;
         switch (kind) {
             case 'purchase':
@@ -81,7 +80,6 @@ export default function index() {
         }
         console.table({P,n,r});
         res = Math.floor(monthlyPayment(P, n, r)) || 0;
-        // M = P[r(1+r)^n/((1+r)^n)-1)]
         return res;
     }
     return (
@@ -93,7 +91,7 @@ export default function index() {
                     <div className="range__block">
                         {
                             rangeArr.map((item, key) => (
-                                <div className="range__item">
+                                <div key={key} className="range__item">
                                     <div className="item__title">
                                         {item.content}
                                     </div>
