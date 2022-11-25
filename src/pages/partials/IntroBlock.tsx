@@ -9,11 +9,13 @@ const ItroBlockItem = ({ title, description, icon }: IIntroBlock) => {
             <div className="item__image">
                 <img src={icon.url} alt={icon.title} />
             </div>
-            <div className="item__name">
-                {title}
-            </div>
-            <div className="item__description">
-                {description.description}
+            <div>
+                <div className="item__name">
+                    {title}
+                </div>
+                <div className="item__description">
+                    {description.description}
+                </div>
             </div>
         </div>
     )
@@ -30,7 +32,7 @@ export default function index() {
             <div className="IntroBlock-list">
                 {
                     listBlock.map((item: IIntroBlock, index: any): any =>
-                        <ItroBlockItem title={item.title} description={item.description} key={index} icon={item.icon}  />
+                        <ItroBlockItem title={item.title} description={item.description} key={index} icon={item.icon} />
                     )
                 }
             </div>

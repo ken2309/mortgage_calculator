@@ -78,7 +78,6 @@ export default function index() {
         function monthlyPayment(p: any, n: any, i: any) {
             return p * i * ((1 + i) ** n) / ((1 + i) ** n - 1);
         }
-        console.table({P,n,r});
         res = Math.floor(monthlyPayment(P, n, r)) || 0;
         return res;
     }

@@ -6,7 +6,6 @@ import useHeroBanner from '../../hooks/use-hero-banner';
 import { IHomeData } from "../../interface/IHomeData";
 const Page = ({data}:any) => {
     const banner = useHeroBanner()[0] as IHomeData;
-    console.log(banner);
     return (
         <section className="header">
             <div style={{ maxWidth: '1440px', margin: 'auto' }}>

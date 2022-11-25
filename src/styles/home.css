@@ -97,7 +97,7 @@ a {
 .banner {
     margin: 0 150px;
     position: absolute;
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     z-index: 1;
     display: flex;
@@ -423,6 +423,7 @@ footer .companyInfo__description {
 
 /* - input range custom start */
 
+.item__slider::-webkit-slider-runnable-track,
 .item__slider {
     -webkit-appearance: none;
     width: calc(100% - 10px);
@@ -435,9 +436,18 @@ footer .companyInfo__description {
     transition: opacity .2s;
 }
 
-.item__slider::-webkit-slider-thumb,
-
-/* .item__slider::-ms-thumb, */
+.item__slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    border: 6px solid var(--color-orange);
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    background-color: var(--color-bg-white);
+    cursor: ew-resize;
+    margin-top: -4px;
+    opacity: .7;
+}
 
 .item__slider::-moz-range-thumb {
     border: 5px solid var(--color-orange);
@@ -460,6 +470,11 @@ footer .companyInfo__description {
     z-index: 1;
 }
 
+.item__slider::-webkit-progress-value {
+    -webkit-appearance: none;
+    background-color: var(--color-bg-orange);
+}
+
 .item__slider::-moz-range-progress {
     height: 14px;
     border-top-left-radius: 20px;
@@ -468,86 +483,178 @@ footer .companyInfo__description {
     background-color: var(--color-bg-orange);
 }
 
-input[type=range]::-ms-fill-lower {
-    background-color: #5082e0;
+@media only screen and (max-width: 1024px) {
+    .banner-background>img {
+        width: 50%;
+        height: auto;
+        object-fit: contain;
+    }
+    .ItroBlock {
+        padding: 80px 0;
+    }
+    .IntroBlock-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .IntroBlock-item {
+        flex-direction: row;
+        width: auto;
+        text-align: left;
+        border-radius: 20px;
+        padding: 25px;
+        margin-bottom: 26px;
+    }
+    .IntroBlock-item .item__image>img {
+        margin-right: 25px;
+    }
+    .IntroBlock-item .item__name {
+        margin: 0;
+    }
+    .IntroBlock-item .item__description {
+        padding: 0;
+        line-height: 1.5;
+    }
+    .mortgage {
+        flex-direction: column;
+    }
+    .mortgage__calculator,
+    .mortgage__try_out {
+        width: 100%;
+    }
+    .mortgage__calculator>div,
+    .mortgage__try_out>div {
+        margin: auto;
+        max-width: var(--width-max-root);
+        width: 80%;
+    }
+    .mortgage__try_out {
+        margin: 79px auto;
+    }
+    .mortgage__try_out .title {
+        margin-bottom: 12px;
+    }
+    footer {
+        width: 80%;
+        margin-top: 0;
+    }
 }
 
-
-/* input[type=range] {
-    -webkit-appearance: none;
-    height: 35px;
-    padding: 0;
-    width: 100%;
+@media only screen and (max-width: 840px) {
+    .logo-label {
+        font-size: 24px;
+        width: auto;
+    }
+    .menu {
+        padding: 25px 0;
+        padding-top: 25px;
+        margin: 0 50px;
+        padding-top: 30px;
+    }
+    .banner {
+        margin: 0 30px;
+        margin-left: 50px;
+    }
+    .banner-title {
+        font-size: 50px;
+    }
+    .banner-description {
+        margin-top: 12px;
+    }
+    .banner-button>button {
+        padding: 7px 32px;
+    }
+    .ItroBlock .title h2 {
+        font-size: 50px;
+    }
+    .IntroBlock-item {
+        width: 80%;
+    }
+    .IntroBlock-item .item__name {
+        font-size: 26px;
+    }
 }
 
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    box-sizing: content-box;
-    border: 12px solid #a6d8ef;
-    height: 24px;
-    width: 24px;
-    border-radius: 18px;
-    background-color: blue;
-    cursor: ew-resize;
-    margin-top: -14px;
-    opacity: .7;
+@media only screen and (max-width: 670px) {
+    .menu {
+        margin: 0;
+        padding: 25px 25px 25px 50px;
+    }
+    .banner-title {
+        font-size: 42px;
+    }
+    .ItroBlock .title h2 {
+        font-size: 42px;
+        width: 80%;
+        margin: auto;
+        margin-bottom: auto;
+        margin-bottom: 40px;
+    }
+    .mortgage__calculator,
+    .mortgage__try_out {
+        width: auto;
+    }
 }
 
-input[type=range]::-moz-range-thumb {
-    border: 12px solid #a6d8ef;
-    height: 8px;
-    width: 8px;
-    border-radius: 18px;
-    background-color: red;
-    cursor: ew-resize;
-    margin-top: -14px;
-    opacity: .7;
+@media only screen and (max-width: 425px) {
+    .menu {
+        /* margin: 0 20px; */
+        padding: 25px 20px;
+        padding-bottom: 30px;
+    }
+    .menu-item {
+        margin-right: 10px;
+    }
+    .menu-item:last-child {
+        margin-right: 0;
+    }
+    .banner {
+        position: relative;
+        transform: unset;
+        margin: 20px;
+    }
+    .banner-background {
+        padding-top: 50px;
+    }
+    .banner-background>img {
+        display: none;
+    }
+    .ItroBlock {
+        padding: 50px 0;
+    }
+    .ItroBlock .title h2 {
+        text-align: unset;
+        width: auto;
+        margin: 0 20px;
+        margin-bottom: 20px;
+    }
+    .IntroBlock-item {
+        padding: 15px;
+    }
+    .IntroBlock-item .item__image>img {
+        padding: 10px;
+        height: 25px;
+        margin-right: 10px;
+    }
+    .mortgage__calculator {
+        padding: 50px 0;
+    }
+    .range__item {
+        width: 100%;
+    }
+    .mortgage__try_out {
+        margin: 50px 0;
+    }
+    .mortgage__try_out .title {
+        line-height: 1.2;
+    }
+    footer {
+        flex-direction: column-reverse;
+        margin-bottom: 50px;
+    }
+    footer>div {
+        width: auto;
+    }
+    footer .companyInfo {
+        margin-top: 50px;
+    }
 }
-
-input[type=range]::-ms-thumb {
-    display: inline-block;
-    border: 12px solid #a6d8ef;
-    height: 8px;
-    width: 8px;
-    border-radius: 18px;
-    background-color: green;
-    cursor: ew-resize;
-    margin-top: 5px;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-    height: 3px;
-    border-color: transparent;
-    color: transparent;
-    background-color: #cccccc;
-}
-
-input[type=range]::-moz-range-track {
-    height: 3px;
-    background-color: #cccccc;
-}
-
-input[type=range]::-ms-track {
-    border-color: transparent;
-    color: transparent;
-    height: 3px;
-    background-color: #cccccc;
-}
-
-input[type=range]::-ms-fill-lower {
-    background-color: #5082e0;
-}
-
-input[type=range]::-moz-range-progress {
-    background-color: green;
-}
-
-input[type=range]::-ms-tooltip {
-    display: none;
-} */
-
-
-/* - input range custom end */
-
-
-/* util custom end */

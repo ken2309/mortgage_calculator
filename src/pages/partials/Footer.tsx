@@ -30,21 +30,21 @@ export default function index() {
                 </div>
                 <div className="col">
                     <div className="col-title">
-                        Location
+                        Contact
                     </div>
-                    <Link to="#" className="col-item">America</Link>
-                    <Link to="#" className="col-item">Asia</Link>
-                    <Link to="#" className="col-item">Europe</Link>
-                    <Link to="#" className="col-item">Africa</Link>
+                    <Link to="#" className="col-item">About Me</Link>
+                    <Link to="#" className="col-item">Teams</Link>
+                    <Link to="#" className="col-item">Profiles</Link>
+                    <Link to="#" className="col-item">FAQ</Link>
                 </div>
                 <div className="col">
                     <div className="col-title">
-                        Location
+                        Legals
                     </div>
-                    <Link to="#" className="col-item">America</Link>
-                    <Link to="#" className="col-item">Asia</Link>
-                    <Link to="#" className="col-item">Europe</Link>
-                    <Link to="#" className="col-item">Africa</Link>
+                    <Link to="#" className="col-item">Privacy</Link>
+                    <Link to="#" className="col-item">Disclaimer</Link>
+                    <Link to="#" className="col-item">Terms</Link>
+                    <Link to="#" className="col-item">Company</Link>
                 </div>
             </div>
         </footer>
