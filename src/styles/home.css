@@ -1,0 +1,553 @@
+@import url(https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap);
+:root {
+    --color-orange: #FF8049;
+    --color-bg-grey: #383F50;
+    --color-bg-orange: #FF8049;
+    --color-bg-brown-white: #FBFDFF;
+    --color-bg-white: #FFFFFF;
+    --color-text-white: #FFFFFF;
+    --color-text-black: #27292E;
+    --color-text-gray: #5F626B;
+    --color-bg-orange-rgba: rgba(255, 128, 73, 0.7);
+    --width-max-root: 1164px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--color-bg-brown-white);
+}
+
+a {
+    color: inherit;
+}
+
+.header {
+    position: relative;
+    background: var(--color-bg-grey);
+    color: var(--color-text-white);
+    height: fit-content;
+}
+
+
+/* nav bar start  */
+
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    margin: 0 127px 0 150px;
+    padding-top: 41px;
+    background-color: inherit;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-avatar__circle {
+    width: 53px;
+    height: 53px;
+    border-radius: 100%;
+    color: var(--color-text-white);
+    background-color: var(--color-bg-orange);
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 53px;
+    text-transform: uppercase;
+    text-align: center;
+    font-style: italic;
+}
+
+.logo-dark .logo-avatar__circle {
+    background-color: #16222D;
+}
+
+.logo-label {
+    width: 151px;
+    margin-left: 20px;
+    word-wrap: break-word;
+    font-weight: 700;
+    font-size: 25.283px;
+    line-height: 1.3;
+}
+
+.menu-list {
+    display: flex;
+}
+
+.menu-item {
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 18px;
+    opacity: .7;
+}
+
+
+/* nav bar end  */
+
+.banner {
+    margin: 0 150px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 546px;
+}
+
+.banner-background {
+    margin-left: auto;
+    padding-top: 85px;
+    text-align: end;
+}
+
+.banner-title {
+    font-weight: 700;
+    font-size: 62px;
+    line-height: 1.3;
+    color: var(--color-text-white);
+    margin: 0;
+}
+
+.banner-description {
+    max-width: 410px;
+    margin-top: 24px;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--color-text-white);
+    opacity: .7;
+}
+
+.banner-button>button {
+    padding: 7px 44px;
+    margin-top: 32px;
+    outline: none;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+button.orangeBackground {
+    position: relative;
+    color: var(--color-text-white);
+    background-color: var(--color-bg-orange);
+    border: 8px solid var(--color-bg-orange);
+    transition: all .5s ease;
+}
+
+button.orangeBackground:focus {
+    outline: none;
+    opacity: .2;
+}
+
+button.orangeBackground::before {
+    content: ' ';
+    border: 2px transparent solid;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    box-sizing: border-box;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    transition: all .7s ease;
+}
+
+button.orangeBackground:hover {
+    background-color: var(--color-bg-orange-rgba);
+    color: var(--color-text-white);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button.orangeBackground:hover::before {
+    border-radius: 20px;
+    border: 2px var(--color-bg-orange) solid
+}
+
+
+/* Intro block start */
+
+.ItroBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: var(--width-max-root);
+    padding: 160px 151px;
+    margin: auto;
+    color: var(--color-text-black);
+}
+
+.ItroBlock .title h2 {
+    max-width: 679px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 140%;
+    margin: 0;
+    margin-bottom: 60px;
+}
+
+.IntroBlock-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.IntroBlock-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: calc((100% - 65px) / 3);
+    padding: 50px 0;
+    background-color: var(--color-bg-white);
+    box-shadow: 0px 4px 120px rgba(58, 86, 78, 0.07);
+}
+
+.IntroBlock-item .item__image>img {
+    background-color: var(--color-bg-orange);
+    padding: 26.5px;
+    border-radius: 100%;
+}
+
+.IntroBlock-item .item__name {
+    margin: 45px 0 25px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+.IntroBlock-item .item__description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--color-text-gray);
+    opacity: .7;
+    padding: 35px;
+}
+
+
+/* Intro block end */
+
+
+/* Mortgage block start  */
+
+.mortgage {
+    display: flex;
+    justify-content: center;
+}
+
+.mortgage__calculator,
+.mortgage__try_out {
+    width: 50%;
+}
+
+.mortgage__calculator>div {
+    margin-left: auto;
+}
+
+.mortgage__calculator>div,
+.mortgage__try_out>div {
+    max-width: calc((var(--width-max-root) / 2) - 46px);
+}
+
+.mortgage__calculator {
+    background-color: var(--color-bg-grey);
+    color: var(--color-text-white);
+    padding: 65px 46px;
+    padding-left: 46px;
+    padding-left: 0;
+}
+
+.mortgage__try_out {
+    color: var(--color-text-black);
+    margin: 79px 49px;
+    margin-right: 0;
+}
+
+.mortgage__try_out .title {
+    margin-bottom: 26px;
+}
+
+.mortgage__try_out .description {
+    margin-bottom: 50px;
+}
+
+.mortgage__try_out .orangeBackground {
+    border-right-width: 15px;
+    border-left-width: 15px;
+    padding: 15px 45px;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.mortgage__try_out .orangeBackground::before {
+    left: -25px;
+    width: calc(100% + 50px);
+}
+
+.mortgage__try_out .orangeBackground:hover {
+    background-color: var(--color-bg-orange);
+}
+
+.mortgage .title {
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    color: inherit;
+}
+
+.mortgage .description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+}
+
+.range__block {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 32px 0 6px;
+}
+
+.range__item {
+    width: 50%;
+    margin-bottom: 22px;
+}
+
+.range__item .item__title {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.mortgage__result {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.mortgage__result-number {
+    display: inline-block;
+    color: var(--color-orange);
+    font-size: x-large;
+}
+
+
+/* Mortgage block end  */
+
+
+/* footer start */
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    /* margin: 0 150px 80px; */
+    max-width: var(--width-max-root);
+    margin: auto;
+    margin-top: 139px;
+    margin-bottom: 80px;
+}
+
+footer>div {
+    width: 50%;
+}
+
+footer a {
+    text-decoration: unset;
+    display: block;
+}
+
+footer .companyInfo {
+    margin-top: 21px;
+}
+
+footer .companyInfo__description {
+    margin: 26px 0 41px;
+    max-width: 371px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--color-text-black);
+}
+
+.footer-navigate {
+    display: flex;
+    justify-content: space-around;
+    color: var(--color-text-black);
+}
+
+.footer-navigate .col-title {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 180%;
+}
+
+.footer-navigate .col-item {
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+}
+
+.footer-navigate .col-item:last-child {
+    margin-bottom: 0;
+}
+
+.network-logo>img {
+    margin: 0 29px;
+}
+
+.network-logo>img:first-child,
+.network-logo>img:last-child {
+    margin: 0;
+}
+
+
+/* footer end  */
+
+
+/* util custom start */
+
+
+/* - input range custom start */
+
+.item__slider {
+    -webkit-appearance: none;
+    width: calc(100% - 10px);
+    height: 14px;
+    background: var(--color-bg-white);
+    border-radius: 20px;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.item__slider::-webkit-slider-thumb,
+
+/* .item__slider::-ms-thumb, */
+
+.item__slider::-moz-range-thumb {
+    border: 5px solid var(--color-orange);
+    border-left-width: 4.23px;
+    border-right-width: 4.23px;
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    background-color: var(--color-bg-white);
+    cursor: ew-resize;
+    margin-top: -14px;
+    z-index: 2;
+    /* opacity: .7; */
+}
+
+.item__slider::-moz-range-track {
+    height: 14px;
+    border-radius: 20px;
+    background-color: inherit;
+    z-index: 1;
+}
+
+.item__slider::-moz-range-progress {
+    height: 14px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    opacity: .7;
+    background-color: var(--color-bg-orange);
+}
+
+input[type=range]::-ms-fill-lower {
+    background-color: #5082e0;
+}
+
+
+/* input[type=range] {
+    -webkit-appearance: none;
+    height: 35px;
+    padding: 0;
+    width: 100%;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    border: 12px solid #a6d8ef;
+    height: 24px;
+    width: 24px;
+    border-radius: 18px;
+    background-color: blue;
+    cursor: ew-resize;
+    margin-top: -14px;
+    opacity: .7;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: 12px solid #a6d8ef;
+    height: 8px;
+    width: 8px;
+    border-radius: 18px;
+    background-color: red;
+    cursor: ew-resize;
+    margin-top: -14px;
+    opacity: .7;
+}
+
+input[type=range]::-ms-thumb {
+    display: inline-block;
+    border: 12px solid #a6d8ef;
+    height: 8px;
+    width: 8px;
+    border-radius: 18px;
+    background-color: green;
+    cursor: ew-resize;
+    margin-top: 5px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 3px;
+    border-color: transparent;
+    color: transparent;
+    background-color: #cccccc;
+}
+
+input[type=range]::-moz-range-track {
+    height: 3px;
+    background-color: #cccccc;
+}
+
+input[type=range]::-ms-track {
+    border-color: transparent;
+    color: transparent;
+    height: 3px;
+    background-color: #cccccc;
+}
+
+input[type=range]::-ms-fill-lower {
+    background-color: #5082e0;
+}
+
+input[type=range]::-moz-range-progress {
+    background-color: green;
+}
+
+input[type=range]::-ms-tooltip {
+    display: none;
+} */
+
+
+/* - input range custom end */
+
+
+/* util custom end */
